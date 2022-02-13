@@ -1,0 +1,163 @@
+@import 'reset';
+@import 'variables';
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 30px 0;
+
+    @media (max-width: 415px) { padding: 25px 15px; }
+
+    .hc__logoContainer {
+        width: 65%;
+
+        @media (max-width: 415px) { width: 50%; }
+
+        .hclc__item {
+            max-width: 100%;
+            width: 15%;
+
+            @media (max-width: 415px) { width: 60%; }
+        }
+    }
+
+    .hc__navBar {
+        display: flex;
+        justify-content: center;
+
+        .hcnb__socialMedias:not(:last-child) { margin-right: 30px; }
+
+        @media (max-width: 415px) { 
+            width: 50%; 
+            
+            .hcnb__socialMedias:not(:last-child) { margin-right: 20px; }
+        }
+    }
+}
+
+.container {
+    display: flex;
+
+    @media (max-width: 415px) {
+        flex-direction: column-reverse;
+        align-items: center;
+
+        padding: 0 15px;
+    }
+
+    .c__informations {
+        margin-top: 50px;
+
+        @media (max-width: 415px) { margin: 0; }
+
+        .ci__creator, 
+        .ci__title, 
+        .ci__description { color: $text_color; }
+
+        .ci__creator { 
+            margin-bottom: 35px; 
+
+            font-size: 1.4rem; 
+            font-weight: 700; 
+        }
+
+        .ci__title {
+            width: 70%;
+            margin-bottom: 30px;
+
+            font-weight: 900;
+            font-size: 4.8rem;
+            line-height: 1em;
+
+            @media (max-width: 415px) { 
+                width: 100%; 
+                font-size: 4.2rem; 
+            }
+        }
+
+        .ci__description {
+            width: 65%;
+            margin-bottom: 30px;
+
+            font-size: 1.1rem;
+            line-height: 1.8em;
+
+            @media (max-width: 415px) { width: 100%; }
+        }
+
+        .ci__buttons {
+            display: flex;
+
+            .cib__watchNow {
+                padding: 10px 30px;
+                margin-right: 30px;
+
+                text-decoration: none;
+
+                background-color: $primary_color;
+                border: 2px solid $primary_color;
+    
+                transform: skew(-28deg);
+
+                transition: .2s ease-in;
+
+                &:hover { 
+                    background-color: transparent; 
+                    transition: .2s ease-out;
+                }
+
+                .cibwn__content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    color: $text_color;
+                    text-transform: uppercase;
+
+                    transform: skew(28deg);
+
+                    .cibwnc__playIcon { margin-right: 8px; }
+                }
+            }
+
+            .cib__watchtrailer {
+                padding: 10px 30px;
+
+                text-decoration: none;
+
+                border: 2px solid $primary_color;
+
+                transform: skew(-28deg);
+                transition: .2s ease-out;
+
+                @media (max-width: 415px) { display: none; }
+
+                &:hover { 
+                    background-color: $primary_color; 
+                    transition: .2s ease-in;
+                }
+
+                .cibwt__content {
+                    display: flex;
+                    align-items: center;
+
+                    height: 100%;
+
+                    color: $text_color;
+                    text-transform: uppercase;
+
+                    transform: skew(28deg);
+                }
+            }
+        }
+    }
+
+    .c__backgroundImage { 
+        width: 80%; 
+        
+        @media (max-width: 415px) { width: 70%; }
+    }
+}
